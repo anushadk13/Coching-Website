@@ -22,13 +22,18 @@ export default function Footer() {
         <div className="footer__top">
           {/* Brand */}
           <div className="footer__brand">
-            <Link to="/" className="footer__logo">
-              <span className="footer__logo-serif">Built From Within</span>
-              <span className="footer__logo-sub">Coaching</span>
+            <Link to="/" className="footer__logo" aria-label="Built From Within Coaching Home">
+              <div className="footer__logo-monogram">
+                <span className="monogram-b">B</span>
+                <span className="monogram-w">w</span>
+              </div>
+              <div className="footer__logo-meta">
+                <span className="footer__logo-serif">BUILT FROM WITHIN</span>
+                <span className="footer__logo-sub">COACHING</span>
+              </div>
             </Link>
             <p className="footer__tagline">
-              Sustainable coaching for women who want lasting results without extreme diets
-              or unrealistic expectations.
+              Built from within. Proven by action.
             </p>
             {/* Social */}
             <div className="footer__social">

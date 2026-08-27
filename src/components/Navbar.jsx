@@ -34,9 +34,15 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         {/* Logo */}
-        <Link to="/" className="navbar__logo">
-          <span className="navbar__logo-serif">Built</span>
-          <span className="navbar__logo-light">From Within</span>
+        <Link to="/" className="navbar__logo" aria-label="Built From Within Coaching Home">
+          <div className="navbar__logo-monogram">
+            <span className="monogram-b">B</span>
+            <span className="monogram-w">w</span>
+          </div>
+          <div className="navbar__logo-meta">
+            <span className="navbar__logo-serif">BUILT FROM WITHIN</span>
+            <span className="navbar__logo-light">COACHING</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -57,7 +63,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <Link to="/contact" className="btn btn-primary btn-sm navbar__cta">
-          Book Appointment
+          Book Free Call
         </Link>
 
         {/* Mobile Toggle */}
