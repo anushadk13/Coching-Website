@@ -25,7 +25,7 @@ export default function Footer() {
             <Link to="/" className="footer__logo" aria-label="Built From Within Coaching Home">
               <div className="footer__logo-monogram">
                 <span className="monogram-b">B</span>
-                <span className="monogram-w">w</span>
+                <span className="monogram-w">W</span>
               </div>
               <div className="footer__logo-meta">
                 <span className="footer__logo-serif">BUILT FROM WITHIN</span>

@@ -37,12 +37,9 @@ export default function Navbar() {
         <Link to="/" className="navbar__logo" aria-label="Built From Within Coaching Home">
           <div className="navbar__logo-monogram">
             <span className="monogram-b">B</span>
-            <span className="monogram-w">w</span>
+            <span className="monogram-w">W</span>
           </div>
-          <div className="navbar__logo-meta">
-            <span className="navbar__logo-serif">BUILT FROM WITHIN</span>
-            <span className="navbar__logo-light">COACHING</span>
-          </div>
+          <span className="navbar__logo-name">Built From Within <span className="navbar__logo-coaching">Coaching</span></span>
         </Link>
 
         {/* Desktop Nav */}
