@@ -1,9 +1,42 @@
 import { Link } from 'react-router-dom';
-import { Dumbbell, Salad, Brain, Heart, Sparkles, ArrowRight } from 'lucide-react';
+import { Dumbbell, Salad, Brain, Heart, Leaf, Flower2, ArrowRight, ArrowUpRight } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
 import './Home.css';
-import heroImage from '../assets/images/SnapInsta.to_580783422_18537820486027705_5275162506935862360_n.jpg';
+import heroImage from '../assets/images/imag1/663188792_18366890119202641_5831454967479031907_n.jpg';
 import coachImage from '../assets/images/768258135_18373281028229891_8035218790077861210_n.jpeg';
+import program1Image from '../assets/images/625320424_18346431100229891_5400802394696119463_n.jpg';
+import program3Image from '../assets/images/599794776_18340503151229891_3736775543797698400_n.jpg';
+
+// Hero Feature Strip
+const heroFeatures = [
+  { icon: <Dumbbell />, title: 'Strength', desc: 'Training made simple' },
+  { icon: <Leaf />, title: 'Balanced Lifestyle', desc: 'Realistic & sustainable' },
+  { icon: <Heart />, title: 'Confidence', desc: 'Inside & out' },
+  { icon: <Flower2 />, title: 'Long-Term Results', desc: 'No extreme diets' },
+];
+
+// Programs Preview
+const programsPreview = [
+  {
+    image: program1Image,
+    title: '1:1 Coaching',
+    desc: 'Personalised guidance, accountability and support to help you reach your goals.',
+    to: '/coaching',
+  },
+  {
+    image: coachImage,
+    title: 'Nutrition Support',
+    desc: 'Balanced, flexible nutrition without food rules or guilt.',
+    to: '/coaching',
+  },
+  {
+    image: program3Image,
+    position: 'center 20%',
+    title: 'Mindset & Lifestyle',
+    desc: 'Build habits, confidence and a positive relationship with yourself.',
+    to: '/coaching',
+  },
+];
 
 // Content Pillars
 const pillars = [
@@ -48,7 +81,7 @@ export default function Home() {
     <PageWrapper>
       {/* Hero Section */}
       <section className="home-hero">
-        <div className="container hero-inner">
+        <div className="container hero-grid">
           <div className="hero-content">
             <span className="section-tag">Built From Within Coaching</span>
             <h1 className="hero-title">
@@ -61,30 +94,90 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link to="/contact" className="btn btn-primary btn-lg">
-                Book Your Free Discovery Call
+                Send an Enquiry <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="hero-subtag">
-              <span className="hero-subtag-text">Built from within. Proven by action.</span>
-              <svg className="hand-drawn-heart" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M 50,35 C 50,35 37,17 22,28 C 7,39 12,68 50,88 C 88,68 93,39 78,28 C 63,17 50,35 50,35 Z" />
-              </svg>
+            <div className="hero-trust">
+              <div className="hero-trust-avatars">
+                <span className="hero-trust-avatar hero-trust-avatar--1" />
+                <span className="hero-trust-avatar hero-trust-avatar--2" />
+                <span className="hero-trust-avatar hero-trust-avatar--3" />
+              </div>
+              <p className="hero-trust-text">
+                Helping women <strong>build a stronger</strong>, more confident version of themselves.
+              </p>
             </div>
           </div>
 
-          <div className="hero-visual">
-            <div className="hero-image-frame">
-              {/* Using a premium placeholder matching the brand guidelines (natural light, authentic) */}
-              <img 
-                src={heroImage} 
-                alt="Rachel training in natural light" 
-                className="hero-image"
-              />
-              <div className="hero-badge">
-                <Sparkles size={16} className="badge-icon" />
-                <span>Strong, soft & grounded</span>
+          <div className="hero-photo-card">
+            <img
+              src={heroImage}
+              alt="Rachel stretching in golden natural light"
+              className="hero-photo-img"
+            />
+            <div className="hero-decor">
+              <span className="hero-decor-script font-script">Stronger</span>
+              <span className="hero-decor-script font-script">Softer</span>
+              <span className="hero-decor-script font-script">More You</span>
+              <svg className="hero-decor-heart" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M 50,35 C 50,35 37,17 22,28 C 7,39 12,68 50,88 C 88,68 93,39 78,28 C 63,17 50,35 50,35 Z" />
+              </svg>
+              <div className="hero-decor-list">
+                <span>Fitness</span>
+                <span>Mindset</span>
+                <span>Sustainable Habits</span>
+                <span>A Happier You</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="hero-features-inner">
+            {heroFeatures.map((feature, idx) => (
+              <div key={idx} className="hero-feature">
+                <span className="hero-feature-icon">{feature.icon}</span>
+                <div>
+                  <span className="hero-feature-title">{feature.title}</span>
+                  <span className="hero-feature-desc">{feature.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Preview Section */}
+      <section className="home-programs-preview">
+        <div className="container">
+          <div className="programs-preview-header">
+            <div>
+              <span className="section-tag">Our Programs</span>
+              <h2 className="section-heading">Coaching that fits your life</h2>
+            </div>
+            <Link to="/programs" className="programs-preview-link">
+              View All Programs <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="programs-preview-grid">
+            {programsPreview.map((program, idx) => (
+              <Link
+                to={program.to}
+                key={idx}
+                className={`program-card ${program.image ? '' : 'program-card--solid'}`}
+                style={program.image ? { backgroundImage: `url(${program.image})`, backgroundPosition: program.position || 'center' } : undefined}
+              >
+                <div className="program-card-overlay" />
+                <div className="program-card-body">
+                  <h3>{program.title}</h3>
+                  <p>{program.desc}</p>
+                </div>
+                <span className="program-card-arrow">
+                  <ArrowUpRight size={18} />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -96,7 +189,7 @@ export default function Home() {
             <div className="coach-image-frame">
               <img 
                 src={coachImage} 
-                alt="Coach Rachel Accadia" 
+                alt="Coach Rachel Accadia in a sunlit home studio"
                 className="coach-image"
               />
               <div className="coach-image-backdrop"></div>
@@ -188,9 +281,9 @@ export default function Home() {
       <section className="home-cta-banner">
         <div className="container cta-banner-inner">
           <h2>Ready to build a stronger version of yourself?</h2>
-          <p>Book a free 15-minute discovery call to see how we can build confidence and strength together.</p>
+          <p>Send an enquiry to see how we can build confidence and strength together.</p>
           <Link to="/contact" className="btn btn-white btn-lg">
-            Book Your Free Call
+            Send an Enquiry
           </Link>
         </div>
       </section>

@@ -205,3 +205,22 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar__logo-name {
+    font-size: 0.9rem;
+  }
+  .navbar__logo-coaching {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar__logo-monogram {
+    width: 36px;
+    height: 36px;
+  }
+  .navbar__logo-name {
+    font-size: 0.78rem;
+  }
+}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Camera, Mail, Heart, ArrowUpRight } from 'lucide-react';
+import { Mail, Heart, ArrowUpRight } from 'lucide-react';
+import InstagramIcon from './InstagramIcon';
 import './Footer.css';
 
 const footerLinks = [
@@ -38,13 +39,13 @@ export default function Footer() {
             {/* Social */}
             <div className="footer__social">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/rachelaccadia/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
-                aria-label="Instagram"
+                aria-label="Follow Rachel on Instagram"
               >
-                <Camera size={18} />
+                <InstagramIcon />
               </a>
               <a
                 href="mailto:hello@builtfromwithin.com"
