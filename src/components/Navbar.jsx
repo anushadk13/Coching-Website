@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import './Navbar.css';
 
 const navLinks = [
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <Link to="/contact" className="btn btn-primary btn-sm navbar__cta">
-          Book Free Call
+          Send an Enquiry <ArrowRight size={14} />
         </Link>
 
         {/* Mobile Toggle */}
@@ -90,7 +90,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link to="/contact" className="btn btn-primary navbar__mobile-cta">
-            Book a Free Call
+            Send an Enquiry <ArrowRight size={16} />
           </Link>
         </nav>
       </div>

@@ -15,6 +15,8 @@
   --color-sage: #9BAF9F;           /* Soft Sage (wellness accents) */
   --color-sage-dark: #7C9281;      /* Wellness Accent Dark */
   --color-sage-light: #EDF2EE;     /* Wellness Accent Light */
+  --color-forest: #2C5347;         /* Deep Forest Green (hero accent) */
+  --color-forest-dark: #1E3A30;    /* Deep Forest Green Dark */
   --color-mid-gray: #717774;       /* Mid Gray for secondary labels */
   --color-light-gray: #EAE3DA;     /* Light Gray borders */
 
@@ -403,6 +405,10 @@ h1, h2, h3, h4, h5 {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .section-heading { font-size: var(--text-3xl); }
   .section-subheading { font-size: var(--text-base); }
+}
+
+@media (max-width: 640px) {
+  .card { padding: var(--space-lg); }
 }
 
 @media (max-width: 480px) {

@@ -165,7 +165,7 @@
   background: var(--color-white);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   outline: none;
   transition: all var(--transition-fast);
 }

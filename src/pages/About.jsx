@@ -2,9 +2,21 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Trophy, Heart, Smile } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
 import './About.css';
-import aboutMain from '../assets/images/SnapInsta.to_581085824_18537820495027705_2514430885271244824_n.jpg';
-import gallery1 from '../assets/images/SnapInsta.to_583472278_18537820468027705_6303649919624363094_n.jpg';
-import gallery2 from '../assets/images/SnapInsta.to_583972931_18537820477027705_8277905617085394975_n.jpg';
+import aboutMain from '../assets/images/768258135_18373281028229891_8035218790077861210_n.jpeg';
+import gallery1 from '../assets/images/Pro_day/img1.jpg';
+import gallery2 from '../assets/images/Pro_day/img2.jpg';
+import gallery3 from '../assets/images/Pro_day/img3.jpg';
+import gallery4 from '../assets/images/Pro_day/img4.jpg';
+import gallery5 from '../assets/images/Pro_day/img5.jpg';
+import gallery6 from '../assets/images/Pro_day/img6.jpg';
+import gallery7 from '../assets/images/Pro_day/img7.jpg';
+import gallery8 from '../assets/images/Pro_day/img8.jpg';
+import gallery9 from '../assets/images/Pro_day/img9.jpg';
+
+const galleryImages = [
+  gallery1, gallery2, gallery3, gallery4, gallery5,
+  gallery6, gallery7, gallery8, gallery9,
+];
 
 export default function About() {
   return (
@@ -123,20 +135,18 @@ export default function About() {
             </p>
           </div>
           
-          <div className="about-gallery-grid">
-            <div className="gallery-item">
-              <img 
-                src={gallery1} 
-                alt="Rachel coaching and training" 
-                className="gallery-image"
-              />
-            </div>
-            <div className="gallery-item">
-              <img 
-                src={gallery2} 
-                alt="Rachel lifting and athletic strength training" 
-                className="gallery-image"
-              />
+          <div className="gallery-scroller">
+            <div className="gallery-track">
+              {[...galleryImages, ...galleryImages].map((src, index) => (
+                <div className="gallery-item" key={index}>
+                  <img
+                    src={src}
+                    alt="Rachel coaching, training, and on stage at Pro Day"
+                    className="gallery-image"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -151,7 +161,7 @@ export default function About() {
           </p>
           <div className="about-cta-actions">
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Book Your Free Call
+              Send an Enquiry
             </Link>
             <Link to="/coaching" className="btn btn-secondary btn-lg">
               Explore Coaching Options <ArrowRight size={16} />
